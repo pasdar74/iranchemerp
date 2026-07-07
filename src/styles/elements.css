@@ -1,0 +1,132 @@
+a {
+  color: var(--erp-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--erp-primary-hover);
+}
+
+.erp-card {
+  background: var(--erp-surface);
+  border: 1px solid var(--erp-border);
+  border-radius: var(--erp-radius-sm);
+  box-shadow: var(--erp-shadow-card);
+}
+
+.erp-form-group {
+  margin-bottom: 16px;
+}
+
+.erp-label {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: var(--erp-text);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.erp-input,
+.erp-select {
+  display: block;
+  width: 100%;
+  min-height: 35px;
+  padding: 8px 12px;
+  border: 1px solid var(--erp-input-border);
+  border-radius: var(--erp-radius-sm);
+  outline: 0;
+  background-color: var(--erp-input-bg);
+  color: var(--erp-text);
+  line-height: 1.4;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.erp-input::placeholder {
+  color: #a8afc7;
+}
+
+.erp-input:focus,
+.erp-select:focus {
+  border-color: var(--erp-primary);
+  box-shadow: 0 0 0 1px rgba(1, 98, 232, 0.12);
+}
+
+.erp-input.is-pill {
+  min-height: 40px;
+  padding: 8px 18px;
+  border-radius: 20px;
+  background: var(--erp-page-bg);
+}
+
+.erp-select {
+  min-height: 35px;
+  padding-inline-end: 36px;
+  background-color: var(--erp-soft-input-bg);
+}
+
+.erp-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--erp-text);
+}
+
+.erp-check-input {
+  width: 14px;
+  height: 14px;
+  margin: 0;
+  accent-color: var(--erp-primary);
+}
+
+.erp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 35px;
+  padding: 8px 14px;
+  border: 1px solid transparent;
+  border-radius: var(--erp-radius-sm);
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: center;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.erp-btn:hover {
+  transform: translateY(-1px);
+}
+
+.erp-btn:active {
+  transform: translateY(0);
+}
+
+.erp-btn-primary {
+  background: var(--erp-primary);
+  border-color: var(--erp-primary);
+}
+
+.erp-btn-primary:hover {
+  background: var(--erp-primary-hover);
+  border-color: var(--erp-primary-hover);
+}
+
+.erp-btn-facebook {
+  background: var(--erp-facebook);
+  border-color: var(--erp-facebook);
+}
+
+.erp-btn-info {
+  background: var(--erp-info);
+  border-color: var(--erp-info);
+}
+
+.erp-btn-block {
+  width: 100%;
+}
+
+.erp-btn-icon {
+  margin-inline-end: 8px;
+  font-weight: 700;
+}

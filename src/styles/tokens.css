@@ -1,0 +1,22 @@
+:root {
+  --erp-font-base: 'YekanBakhFaNum', Arial, Tahoma, sans-serif;
+  --erp-font-heading: 'Farhang2FaNum', 'YekanBakhFaNum', Arial, Tahoma, sans-serif;
+  --erp-primary: #0162e8;
+  --erp-primary-hover: #0257cf;
+  --erp-info: #0dcaf0;
+  --erp-facebook: #3b5998;
+  --erp-page-bg: #ecf0fa;
+  --erp-auth-hero-bg: #b7d4fa;
+  --erp-surface: #ffffff;
+  --erp-text: #031b4e;
+  --erp-muted: #7987a1;
+  --erp-border: #e9edf6;
+  --erp-input-border: #eae8f1;
+  --erp-input-bg: #ffffff;
+  --erp-soft-input-bg: #f0f1f6;
+  --erp-radius-sm: 4px;
+  --erp-radius-md: 6px;
+  --erp-shadow-card: 0 3px 9px 0 rgba(28, 39, 60, 0.04);
+  --erp-header-height: 64px;
+  --erp-sidebar-width: 240px;
+}

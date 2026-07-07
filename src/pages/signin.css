@@ -1,0 +1,102 @@
+.signin-page {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(380px, 1fr);
+  min-height: 100vh;
+  background: var(--erp-surface);
+  direction: ltr;
+}
+
+.signin-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 56px;
+  background: var(--erp-auth-hero-bg);
+}
+
+.signin-visual img {
+  display: block;
+  width: min(72%, 560px);
+  height: auto;
+}
+
+.signin-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 48px 64px;
+  background: var(--erp-surface);
+  direction: rtl;
+}
+
+.signin-box {
+  width: 100%;
+  max-width: 374px;
+}
+
+.signin-logo {
+  display: block;
+  width: 139px;
+  height: auto;
+  margin-bottom: 46px;
+}
+
+.signin-title {
+  margin: 0 0 2px;
+  color: var(--erp-primary);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.signin-subtitle {
+  margin: 0 0 22px;
+  color: var(--erp-text);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.signin-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.signin-meta {
+  margin-top: 48px;
+  color: var(--erp-muted);
+  font-size: 14px;
+}
+
+.signin-meta p {
+  margin: 7px 0 0;
+}
+
+.signin-meta strong,
+.signin-meta a {
+  color: var(--erp-text);
+  font-weight: 700;
+}
+
+@media (max-width: 960px) {
+  .signin-page {
+    grid-template-columns: 1fr;
+  }
+
+  .signin-visual {
+    display: none;
+  }
+
+  .signin-panel {
+    padding: 32px 20px;
+  }
+}
+
+@media (max-width: 460px) {
+  .signin-actions {
+    grid-template-columns: 1fr;
+  }
+}

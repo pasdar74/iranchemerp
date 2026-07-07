@@ -1,46 +1,68 @@
-# Getting Started with Create React App
+# IranChem ERP Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+این پروژه را خیلی کوچک شروع می کنیم تا هر بخش فقط یک بار ساخته شود و بعدا در جای خودش استفاده شود.
 
-## Available Scripts
+## ساختار فعلی
 
-In the project directory, you can run:
+- `src/App.tsx`: فعلا صفحه نمونه پنل را نمایش می دهد.
+- `src/components/layout/AdminLayout.tsx`: شل اصلی پنل شامل منوی بالای صفحه و منوی کناری.
+- `src/components/ui/TextInput.tsx`: کامپوننت عمومی input و label.
+- `src/components/ui/Button.tsx`: کامپوننت عمومی button با variant های لازم.
+- `src/pages/AdminPreviewPage.tsx`: صفحه نمونه پنل، بر اساس قالب Valex و با متن های فارسی موقت.
+- `src/pages/SignInPage.tsx`: صفحه ورود بر اساس نمونه Valex.
+- `src/styles/tokens.css`: رنگ ها، radius، shadow و مقدارهای پایه قالب.
+- `src/styles/elements.css`: استایل المان های قابل استفاده مجدد مثل input و button.
+- `src/styles/layout.css`: CSS اصلی layout پنل، header، sidebar، breadcrumb، کارت ها و grid محتوا.
+- `src/pages/signin.css`: فقط چیدمان و فاصله های مخصوص صفحه ورود.
+- `src/assets/fonts`: فایل های فونت پروژه.
 
-### `npm start`
+## قانون ساخت المان ها
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+هر المان عمومی اول داخل `src/components/ui` و استایل عمومی آن داخل `src/styles/elements.css` ساخته می شود. صفحه ها فقط همان کامپوننت را استفاده می کنند.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+نمونه:
 
-### `npm test`
+```tsx
+<TextInput id="email" label="ایمیل" type="email" placeholder="ایمیل خود را وارد کنید" />
+<Button type="submit" fullWidth>ورود</Button>
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+اگر بعدا input دیگری لازم شد، کد جدید نمی سازیم و از `TextInput` استفاده می کنیم. اگر ظاهر خاصی لازم شد، یک prop یا modifier کوچک اضافه می کنیم.
 
-### `npm run build`
+## برداشت از نمونه Valex
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- رنگ اصلی: `#0162e8`
+- پس زمینه عمومی: `#ecf0fa`
+- پس زمینه بخش تصویر ورود: آبی روشن نزدیک به `#b7d4fa`
+- input ها: border روشن، ارتفاع حدود 35px، radius کوچک و focus آبی
+- دکمه اصلی: آبی، تمام عرض در فرم ورود
+- صفحه ورود: دو ستون، تصویر سمت چپ در دسکتاپ و فرم سمت راست؛ در موبایل فقط فرم نمایش داده می شود.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## مرحله انجام شده
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+استایل های پایه فرم، صفحه ورود، و نمونه layout پنل ساخته شد. هنوز هیچ منطق ورود، بک اند، validation، dashboard واقعی یا route اضافه نشده است.
 
-### `npm run eject`
+## نمونه پنل
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+نمونه پنل از صفحه Valex الهام گرفته شده است:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- header ثابت با ارتفاع 64px
+- sidebar ثابت با عرض 240px در سمت راست برای RTL
+- محتوای اصلی با فاصله از header و sidebar
+- منوها فعلا متن فارسی نمونه دارند و همه لینک ها موقت هستند
+- بعدا متن هر منو و لینک واقعی آن جداگانه تغییر داده می شود
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## فونت ها
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- `YekanBakhFaNum-Regular.woff`: فونت پایه کل سایت.
+- `Farhang2FaNum-medium.woff`: فونت تیترها، متن های برجسته و دکمه ها.
 
-## Learn More
+فونت ها در `src/index.css` با `@font-face` تعریف شده اند و نام هایشان در `src/styles/tokens.css` به صورت token نگهداری می شود.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## اجرای پروژه
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm start
+```
+
+بعد از اجرا، پروژه روی `http://localhost:3000/` دیده می شود.
