@@ -69,7 +69,7 @@ function CustomersPage() {
           <div className="erp-breadcrumb">
             <a href="#dashboard">داشبورد</a>
             <span aria-hidden="true">/</span>
-            <span>لیست مشتریان</span>
+            <span>لیست  مشتریان</span>
           </div>
         </div>
 
