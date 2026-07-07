@@ -81,3 +81,18 @@ npm start
 - پوشه `static`
 
 در workflow فعلی، خروجی `build` مستقیم داخل ریشه FTP آپلود می شود تا آدرس `https://adminerp.iranchem.com/` همان فایل `index.html` خروجی React را بخواند.
+
+## اتصال حسابفا
+
+صفحه مشتریان از مسیر داخلی `api/hesabfa/contacts.php` اطلاعات را می خواند. این فایل روی هاست به API حسابفا وصل می شود تا کلیدهای حسابفا داخل React و مرورگر دیده نشوند.
+
+برای deploy باید این Secretها در GitHub repository تنظیم شوند:
+
+- `HESABFA_API_KEY`
+- `HESABFA_USER_ID`
+- `HESABFA_PASSWORD`
+- `HESABFA_LOGIN_TOKEN`
+
+فایل واقعی `config.php` در زمان GitHub Actions داخل خروجی build ساخته می شود و نباید داخل git قرار بگیرد.
+
+در منوی حسابداری، گزینه `مشتریان` به صفحه لیست مشتریان وصل شده است و جدول از endpoint داخلی بالا داده می گیرد.

@@ -11,7 +11,7 @@ const statCards = [
 
 function AdminPreviewPage() {
   return (
-    <AdminLayout>
+    <AdminLayout activeHref="#dashboard">
       <div className="erp-page-heading">
         <div>
           <h1>ورودی ها</h1>

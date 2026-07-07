@@ -14,7 +14,6 @@ type MenuChild = {
 type MenuGroup = {
   title?: string;
   items: Array<{
-    active?: boolean;
     children?: MenuChild[];
     href: string;
     icon: string;
@@ -35,7 +34,7 @@ const menuGroups: MenuGroup[] = [
   {
     title: 'اصلی',
     items: [
-      { active: true, href: '#dashboard', icon: '▣', label: 'داشبورد' },
+      { href: '#dashboard', icon: '▣', label: 'داشبورد' },
     ],
   },
   {
@@ -80,16 +79,21 @@ const menuGroups: MenuGroup[] = [
     ],
   },
   {
-    title: 'صفحات',
+    title: 'حسابداری',
     items: [
-      { href: '#profile', icon: '◉', label: 'پروفایل' },
+      { href: '#customers', icon: '◉', label: 'مشتریان' },
       { href: '#settings', icon: '⚙', label: 'تنظیمات' },
+      { href: '#api', icon: '⚙', label: 'api ها' },
       { href: '#help', icon: '?', label: 'راهنما' },
     ],
   },
 ];
 
-function Sidebar() {
+type SidebarProps = {
+  activeHref?: string;
+};
+
+function Sidebar({ activeHref = '#dashboard' }: SidebarProps) {
   return (
     <aside className="erp-sidebar" aria-label="منوی اصلی">
       <div className="erp-sidebar-brand">
@@ -105,7 +109,7 @@ function Sidebar() {
             {group.title ? <div className="erp-menu-title">{group.title}</div> : null}
             {group.items.map((item) => (
               <div className="erp-menu-entry" key={item.label}>
-                <a className={item.active ? 'erp-menu-item is-active' : 'erp-menu-item'} href={item.href}>
+                <a className={item.href === activeHref ? 'erp-menu-item is-active' : 'erp-menu-item'} href={item.href}>
                   <span className="erp-menu-icon" aria-hidden="true">{item.icon}</span>
                   <span className="erp-menu-label">{item.label}</span>
                   {item.children ? <span className="erp-menu-caret" aria-hidden="true">⌄</span> : null}
@@ -159,13 +163,14 @@ function TopHeader() {
 }
 
 type AdminLayoutProps = {
+  activeHref?: string;
   children: React.ReactNode;
 };
 
-function AdminLayout({ children }: AdminLayoutProps) {
+function AdminLayout({ activeHref, children }: AdminLayoutProps) {
   return (
     <div className="erp-shell">
-      <Sidebar />
+      <Sidebar activeHref={activeHref} />
       <TopHeader />
       <main className="erp-main">
         {children}

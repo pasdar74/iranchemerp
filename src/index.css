@@ -1,6 +1,7 @@
 @import './styles/tokens.css';
 @import './styles/elements.css';
 @import './styles/layout.css';
+@import './styles/tables.css';
 @import './pages/signin.css';
 
 @font-face {
