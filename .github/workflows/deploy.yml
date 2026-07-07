@@ -28,6 +28,15 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Create deploy marker
+        run: |
+          echo "repo=${{ github.repository }}" > build/deploy-marker.txt
+          echo "branch=${{ github.ref_name }}" >> build/deploy-marker.txt
+          echo "commit=${{ github.sha }}" >> build/deploy-marker.txt
+          echo "run_id=${{ github.run_id }}" >> build/deploy-marker.txt
+          echo "deployed_at=$(date -u +'%Y-%m-%dT%H:%M:%SZ')" >> build/deploy-marker.txt
+          find build -maxdepth 2 -type f | sort
+
       - name: Sync files to host via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -35,4 +44,5 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./build/
-          server-dir: /public_html/
+          server-dir: /
+          log-level: verbose

@@ -66,3 +66,18 @@ npm start
 ```
 
 بعد از اجرا، پروژه روی `http://localhost:3000/` دیده می شود.
+
+## دپلوی
+
+این پروژه React با Create React App ساخته شده است. برای هاست معمولی فقط خروجی `npm run build` باید داخل document root دامنه آپلود شود، نه کل سورس پروژه.
+
+فایل های خروجی طبیعی build شامل این موارد هستند:
+
+- `index.html`
+- `asset-manifest.json`
+- `manifest.json`
+- `robots.txt`
+- فایل های آیکن مثل `favicon.ico`
+- پوشه `static`
+
+در workflow فعلی، خروجی `build` مستقیم داخل ریشه FTP آپلود می شود تا آدرس `https://adminerp.iranchem.com/` همان فایل `index.html` خروجی React را بخواند.
